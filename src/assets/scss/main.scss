@@ -1,2 +1,22 @@
 /********* Import normalize.css *********/
 @import '../normalize.css';
+
+/********* Import font *********/
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+
+/********* Import variables *********/
+@import './variables.scss';
+
+/********* Global *********/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-font-primary;
+  font-size: 16px;
+  background: $color-page-background;
+}
