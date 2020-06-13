@@ -7,7 +7,7 @@ import store from './store';
 import './assets/scss/main.scss';
 
 /* Register BaseButton globally */
-import BaseButton from './components/BaseButton.vue';
+import BaseButton from './components/base/BaseButton.vue';
 Vue.component('base-button', BaseButton);
 
 Vue.config.productionTip = false;
