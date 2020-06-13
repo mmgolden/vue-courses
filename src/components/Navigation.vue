@@ -9,12 +9,12 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button @click="navigateToLogin">
+          <base-button outline @click="navigateToLogin">
             Login
           </base-button>
         </li>
         <li>
-          <base-button @click="navigateToSignup">
+          <base-button primary @click="navigateToSignup">
             Sign up
           </base-button>
         </li>
@@ -73,9 +73,18 @@ export default {
 
 .navigation-list {
   display: flex;
+  align-items: center;
   padding: 0;
   margin: 0 0 0 1.875rem;
   list-style: none;
+
+  li {
+    margin-right: 32px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -87,6 +96,10 @@ export default {
     &:hover {
       color: $color-primary;
     }
+  }
+
+  li a.router-link-active {
+    color: $color-primary;
   }
 }
 </style>
