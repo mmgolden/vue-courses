@@ -2,7 +2,9 @@
   <div id="app">
     <navigation></navigation>
     <main class="main-container">
-      <router-view />
+      <div class="page-container">
+        <router-view />
+      </div>
     </main>
   </div>
 </template>
@@ -23,5 +25,13 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 0 1.875rem;
+}
+
+.page-container {
+  width: 100%;
+
+  @media screen and (min-width: 992px) {
+    max-width: 1130px;
+  }
 }
 </style>
