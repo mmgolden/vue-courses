@@ -1,10 +1,22 @@
 <template>
   <header class="navigation-header">
     <nav class="navigation-navbar">
-      <h1 class="navigation-title">Vue Academy</h1>
+      <router-link to="/" class="navigation-title-link">
+        <h1 class="navigation-title">Vue Academy</h1>
+      </router-link>
       <ul class="navigation-list">
         <li v-for="navItem in navItems" :key="navItem.name">
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
+        </li>
+        <li>
+          <base-button @click="navigateToLogin">
+            Login
+          </base-button>
+        </li>
+        <li>
+          <base-button @click="navigateToSignup">
+            Sign up
+          </base-button>
         </li>
       </ul>
     </nav>
@@ -17,6 +29,14 @@ export default {
     return {
       navItems: [{ name: 'Courses', to: '/courses' }]
     };
+  },
+  methods: {
+    navigateToLogin() {
+      this.$router.push({ name: 'login' });
+    },
+    navigateToSignup() {
+      this.$router.push({ name: 'signup' });
+    }
   }
 };
 </script>
@@ -41,9 +61,14 @@ export default {
   }
 }
 
+.navigation-title-link {
+  text-decoration: none;
+}
+
 .navigation-title {
   margin: 0;
   font-size: 1.5rem;
+  color: $color-font-primary;
 }
 
 .navigation-list {
