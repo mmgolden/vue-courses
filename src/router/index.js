@@ -1,28 +1,36 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Courses from '../views/Courses.vue';
 
 Vue.use(VueRouter);
 
+const Login = () =>
+  import(/* webpackChunkName: "login" */ '../views/Login.vue');
+
+const Signup = () =>
+  import(/* webpackChunkName: "signup" */ '../views/Signup.vue');
+
 const routes = [
+  { path: '/', redirect: '/courses' },
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: '/courses',
+    name: 'courses',
+    component: Courses
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: Signup
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 });
