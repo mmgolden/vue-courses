@@ -15,3 +15,32 @@
   color: $color-font-primary;
   font-weight: 600;
 }
+
+@mixin p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: $color-font-primary;
+}
+
+@mixin a {
+  color: $color-font-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin form {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin input {
+  border: 1px solid $color-input-border;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: $color-font-primary;
+  border-radius: 2px;
+}
