@@ -1,7 +1,7 @@
 <template>
   <base-modal ref="baseModal">
     <template #header>
-      Login to your account
+      Log in to your account
     </template>
 
     <template #body>

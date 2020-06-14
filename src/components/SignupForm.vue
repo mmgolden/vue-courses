@@ -1,6 +1,6 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
-    <form class="login-form" @submit.prevent="handleSubmit(onSubmit)">
+    <form class="signup-form" @submit.prevent="handleSubmit(onSubmit)">
       <text-field
         label="Email"
         type="email"
@@ -13,11 +13,18 @@
         label="Password"
         type="password"
         name="password"
-        autocomplete="current-password"
+        autocomplete="new-password"
         rules="required"
         v-model="password"
       ></text-field>
-      <base-button type="submit" primary>Log in</base-button>
+      <text-field
+        label="Confirm password"
+        type="password"
+        name="confirmPassword"
+        rules="required"
+        v-model="confirmPassword"
+      ></text-field>
+      <base-button type="submit" primary>Sign up</base-button>
     </form>
   </ValidationObserver>
 </template>
@@ -32,19 +39,20 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     };
   },
   methods: {
     onSubmit() {
-      console.log(this.email, this.password);
+      console.log(this.email, this.password, this.confirmPassword);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.login-form {
+.signup-form {
   @include form;
 
   button {
