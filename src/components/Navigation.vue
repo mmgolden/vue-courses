@@ -12,19 +12,19 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="navigateToLogin">
+          <base-button outline @click="$refs.loginModal.open()">
             Login
           </base-button>
         </li>
         <li>
-          <base-button primary @click="navigateToSignup">
+          <base-button primary @click="$refs.loginModal.open()">
             Sign up
           </base-button>
         </li>
       </ul>
 
       <!-- Modals -->
-      <login-modal></login-modal>
+      <login-modal ref="loginModal"></login-modal>
     </nav>
   </header>
 </template>
@@ -40,14 +40,6 @@ export default {
     return {
       navItems: [{ name: 'Courses', to: '/courses' }]
     };
-  },
-  methods: {
-    navigateToLogin() {
-      this.$router.push({ name: 'login' });
-    },
-    navigateToSignup() {
-      this.$router.push({ name: 'signup' });
-    }
   }
 };
 </script>

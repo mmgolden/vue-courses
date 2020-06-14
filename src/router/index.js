@@ -4,28 +4,12 @@ import Courses from '../views/Courses.vue';
 
 Vue.use(VueRouter);
 
-const Login = () =>
-  import(/* webpackChunkName: "login" */ '../views/Login.vue');
-
-const Signup = () =>
-  import(/* webpackChunkName: "signup" */ '../views/Signup.vue');
-
 const routes = [
   { path: '/', redirect: '/courses' },
   {
     path: '/courses',
     name: 'courses',
     component: Courses
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: Login
-  },
-  {
-    path: '/signup',
-    name: 'signup',
-    component: Signup
   }
 ];
 
