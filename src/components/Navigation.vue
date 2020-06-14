@@ -1,9 +1,12 @@
 <template>
   <header class="navigation-header">
     <nav class="navigation-navbar">
+      <!-- Title -->
       <router-link to="/" class="navigation-title-link">
         <h1 class="navigation-title">Vue Academy</h1>
       </router-link>
+
+      <!-- Menu -->
       <ul class="navigation-list">
         <li v-for="navItem in navItems" :key="navItem.name">
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
@@ -19,12 +22,20 @@
           </base-button>
         </li>
       </ul>
+
+      <!-- Modals -->
+      <login-modal></login-modal>
     </nav>
   </header>
 </template>
 
 <script>
+import LoginModal from '@/components/LoginModal.vue';
+
 export default {
+  components: {
+    LoginModal
+  },
   data() {
     return {
       navItems: [{ name: 'Courses', to: '/courses' }]
