@@ -1,5 +1,5 @@
 <template>
-  <base-modal>
+  <base-modal ref="baseModal">
     <template #header>
       Login to your account
     </template>
@@ -20,6 +20,14 @@ import BaseModal from '@/components/base/BaseModal.vue';
 export default {
   components: {
     BaseModal
+  },
+  methods: {
+    close() {
+      this.$refs.baseModal.close();
+    },
+    open() {
+      this.$refs.baseModal.open();
+    }
   }
 };
 </script>
