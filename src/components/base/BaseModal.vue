@@ -9,7 +9,7 @@
           <slot name="header"></slot>
         </h2>
         <base-button @click="close">
-          <x-icon></x-icon>
+          <x-icon class="modal-close-icon"></x-icon>
         </base-button>
       </div>
 
@@ -94,5 +94,12 @@ export default {
 
 .modal-title {
   margin: 0;
+  font-size: 1.125rem;
+  color: $color-font-primary;
+  font-weight: 600;
+}
+
+.modal-close-icon {
+  fill: $color-font-primary;
 }
 </style>

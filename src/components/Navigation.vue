@@ -17,7 +17,7 @@
           </base-button>
         </li>
         <li>
-          <base-button primary @click="$refs.loginModal.open()">
+          <base-button primary @click="$refs.signupModal.open()">
             Sign up
           </base-button>
         </li>
@@ -25,16 +25,19 @@
 
       <!-- Modals -->
       <login-modal ref="loginModal"></login-modal>
+      <signup-modal ref="signupModal"></signup-modal>
     </nav>
   </header>
 </template>
 
 <script>
 import LoginModal from '@/components/LoginModal.vue';
+import SignupModal from '@/components/SignupModal.vue';
 
 export default {
   components: {
-    LoginModal
+    LoginModal,
+    SignupModal
   },
   data() {
     return {
