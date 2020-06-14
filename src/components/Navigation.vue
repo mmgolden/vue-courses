@@ -12,10 +12,14 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="$refs.loginModal.open()">Login</base-button>
+          <base-button outline @click="$refs.loginModal.open()">
+            Log in
+          </base-button>
         </li>
         <li>
-          <base-button primary @click="$refs.signupModal.open()">Sign up</base-button>
+          <base-button primary @click="$refs.signupModal.open()">
+            Sign up
+          </base-button>
         </li>
       </ul>
 

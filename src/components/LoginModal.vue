@@ -5,21 +5,23 @@
     </template>
 
     <template #body>
-      <p>A form will go here</p>
+      <login-form></login-form>
     </template>
 
     <template #footer>
-      <p>Don't have an account? Sign up</p>
+      <p class="modal-footer-text">Don't have an account? Sign up</p>
     </template>
   </base-modal>
 </template>
 
 <script>
 import BaseModal from '@/components/base/BaseModal.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 export default {
   components: {
-    BaseModal
+    BaseModal,
+    LoginForm
   },
   methods: {
     close() {
@@ -32,4 +34,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.modal-footer-text {
+  @include p;
+  margin-top: 0.5rem;
+}
+</style>
