@@ -31,19 +31,18 @@ export default {
 <style lang="scss" scoped>
 .button {
   background: transparent;
-  border: 2px solid transparent;
   border: none;
   cursor: pointer;
   color: $color-font-primary;
   font-size: 1.125rem;
   font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 24px;
 }
 
 .button-outline {
   border: 2px solid $color-font-primary;
   transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
 
   &:hover {
     color: $color-primary;
@@ -56,6 +55,8 @@ export default {
   background: $color-font-primary;
   color: $color-font-contrast;
   transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
 
   &:hover {
     border: 2px solid $color-primary;

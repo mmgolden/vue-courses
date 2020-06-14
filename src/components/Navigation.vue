@@ -1,42 +1,44 @@
 <template>
   <header class="navigation-header">
     <nav class="navigation-navbar">
+      <!-- Title -->
       <router-link to="/" class="navigation-title-link">
         <h1 class="navigation-title">Vue Academy</h1>
       </router-link>
+
+      <!-- Menu -->
       <ul class="navigation-list">
         <li v-for="navItem in navItems" :key="navItem.name">
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="navigateToLogin">
-            Login
-          </base-button>
+          <base-button outline @click="$refs.loginModal.open()">Login</base-button>
         </li>
         <li>
-          <base-button primary @click="navigateToSignup">
-            Sign up
-          </base-button>
+          <base-button primary @click="$refs.signupModal.open()">Sign up</base-button>
         </li>
       </ul>
+
+      <!-- Modals -->
+      <login-modal ref="loginModal"></login-modal>
+      <signup-modal ref="signupModal"></signup-modal>
     </nav>
   </header>
 </template>
 
 <script>
+import LoginModal from '@/components/LoginModal.vue';
+import SignupModal from '@/components/SignupModal.vue';
+
 export default {
+  components: {
+    LoginModal,
+    SignupModal
+  },
   data() {
     return {
       navItems: [{ name: 'Courses', to: '/courses' }]
     };
-  },
-  methods: {
-    navigateToLogin() {
-      this.$router.push({ name: 'login' });
-    },
-    navigateToSignup() {
-      this.$router.push({ name: 'signup' });
-    }
   }
 };
 </script>
@@ -66,9 +68,7 @@ export default {
 }
 
 .navigation-title {
-  margin: 0;
-  font-size: 1.5rem;
-  color: $color-font-primary;
+  @include h1;
 }
 
 .navigation-list {
