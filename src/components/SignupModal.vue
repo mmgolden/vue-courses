@@ -9,7 +9,10 @@
     </template>
 
     <template #footer>
-      <p class="modal-footer-text">Already have an account? Login</p>
+      <p class="modal-footer-text">
+        Already have an account?
+        <span @click="onLogin" class="modal-link">Log in</span>
+      </p>
     </template>
   </base-modal>
 </template>
@@ -22,6 +25,12 @@ export default {
   components: {
     BaseModal,
     SignupForm
+  },
+  props: {
+    onLogin: {
+      type: Function,
+      required: true
+    }
   },
   methods: {
     close() {
@@ -38,5 +47,11 @@ export default {
 .modal-footer-text {
   @include p;
   margin-top: 0.5rem;
+}
+
+.modal-link {
+  @include a;
+  cursor: pointer;
+  font-weight: bold;
 }
 </style>
