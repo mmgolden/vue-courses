@@ -14,7 +14,7 @@
         type="password"
         name="password"
         autocomplete="new-password"
-        rules="required"
+        rules="required|password:@Confirm password"
         v-model="password"
       ></text-field>
       <text-field
@@ -31,6 +31,15 @@
 
 <script>
 import TextField from '@/components/form/TextField.vue';
+import { extend } from 'vee-validate';
+
+extend('password', {
+  params: ['target'],
+  validate(value, { target }) {
+    return value === target;
+  },
+  message: 'Password confirmation does not match'
+});
 
 export default {
   components: {
