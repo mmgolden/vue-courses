@@ -12,16 +12,20 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="$refs.loginModal.open()">Login</base-button>
+          <base-button outline @click="openLoginModal">
+            Log in
+          </base-button>
         </li>
         <li>
-          <base-button primary @click="$refs.signupModal.open()">Sign up</base-button>
+          <base-button primary @click="openSignupModal">
+            Sign up
+          </base-button>
         </li>
       </ul>
 
       <!-- Modals -->
-      <login-modal ref="loginModal"></login-modal>
-      <signup-modal ref="signupModal"></signup-modal>
+      <login-modal ref="loginModal" :onSignup="openSignupModal"></login-modal>
+      <signup-modal ref="signupModal" :onLogin="openLoginModal"></signup-modal>
     </nav>
   </header>
 </template>
@@ -39,6 +43,16 @@ export default {
     return {
       navItems: [{ name: 'Courses', to: '/courses' }]
     };
+  },
+  methods: {
+    openSignupModal() {
+      this.$refs.loginModal.close();
+      this.$refs.signupModal.open();
+    },
+    openLoginModal() {
+      this.$refs.signupModal.close();
+      this.$refs.loginModal.open();
+    }
   }
 };
 </script>

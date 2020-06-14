@@ -1,25 +1,36 @@
 <template>
   <base-modal ref="baseModal">
     <template #header>
-      Login to your account
+      Log in to your account
     </template>
 
     <template #body>
-      <p>A form will go here</p>
+      <login-form></login-form>
     </template>
 
     <template #footer>
-      <p>Don't have an account? Sign up</p>
+      <p class="modal-footer-text">
+        Don't have an account?
+        <span @click="onSignup" class="modal-link">Sign up</span>
+      </p>
     </template>
   </base-modal>
 </template>
 
 <script>
 import BaseModal from '@/components/base/BaseModal.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 export default {
   components: {
-    BaseModal
+    BaseModal,
+    LoginForm
+  },
+  props: {
+    onSignup: {
+      type: Function,
+      required: true
+    }
   },
   methods: {
     close() {
@@ -32,4 +43,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.modal-footer-text {
+  @include p;
+  margin-top: 0.5rem;
+}
+
+.modal-link {
+  @include a;
+  cursor: pointer;
+  font-weight: bold;
+}
+</style>

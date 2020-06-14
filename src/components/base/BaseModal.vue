@@ -99,4 +99,8 @@ export default {
 .modal-close-icon {
   fill: $color-font-primary;
 }
+
+.modal-body {
+  padding: 1.5rem 0;
+}
 </style>
