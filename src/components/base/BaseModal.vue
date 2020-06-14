@@ -1,6 +1,6 @@
 <template>
-  <div class="modal">
-    <div class="modal-overlay"></div>
+  <div class="modal" v-if="show">
+    <div class="modal-overlay" @click="close"></div>
 
     <div class="modal-dialog">
       <!-- Header -->
@@ -8,7 +8,7 @@
         <h2 class="modal-title">
           <slot name="header"></slot>
         </h2>
-        <base-button>
+        <base-button @click="close">
           <x-icon></x-icon>
         </base-button>
       </div>
@@ -32,6 +32,19 @@ import { XIcon } from 'vue-feather-icons';
 export default {
   components: {
     XIcon
+  },
+  data() {
+    return {
+      show: false
+    };
+  },
+  methods: {
+    close() {
+      this.show = false;
+    },
+    open() {
+      this.show = true;
+    }
   }
 };
 </script>
