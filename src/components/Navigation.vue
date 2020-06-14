@@ -12,14 +12,10 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="$refs.loginModal.open()">
-            Login
-          </base-button>
+          <base-button outline @click="$refs.loginModal.open()">Login</base-button>
         </li>
         <li>
-          <base-button primary @click="$refs.signupModal.open()">
-            Sign up
-          </base-button>
+          <base-button primary @click="$refs.signupModal.open()">Sign up</base-button>
         </li>
       </ul>
 
@@ -72,9 +68,7 @@ export default {
 }
 
 .navigation-title {
-  margin: 0;
-  font-size: 1.5rem;
-  color: $color-font-primary;
+  @include h1;
 }
 
 .navigation-list {

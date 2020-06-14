@@ -93,10 +93,7 @@ export default {
 }
 
 .modal-title {
-  margin: 0;
-  font-size: 1.125rem;
-  color: $color-font-primary;
-  font-weight: 600;
+  @include h2;
 }
 
 .modal-close-icon {
