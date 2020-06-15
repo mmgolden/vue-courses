@@ -24,7 +24,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1.875rem;
+  padding: 1.875rem;
 }
 
 .page-container {
