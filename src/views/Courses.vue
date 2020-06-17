@@ -1,12 +1,12 @@
 <template>
   <div>
     <h2 class="page-title">Courses</h2>
+    <course-tabs></course-tabs>
     <div>
       <course-card
         v-for="course in courses"
         :key="course.name"
-        :name="course.name"
-        :summary="course.summary"
+        :course="course"
       ></course-card>
     </div>
   </div>
@@ -14,23 +14,29 @@
 
 <script>
 import CourseCard from '@/components/CourseCard.vue';
+import CourseTabs from '@/components/CourseTabs.vue';
 
 export default {
   components: {
-    CourseCard
+    CourseCard,
+    CourseTabs
   },
   data() {
     return {
       courses: [
         {
           name: 'Introduction to Vue',
+          author: 'Melinda Golden',
           summary:
-            'Bacon ipsum dolor amet short loin shank corned beef cow. Brisket cupim beef ribs pork chop alcatra chislic tail sirloin bresaola tongue burgdoggen doner.'
+            'Bacon ipsum dolor amet short loin shank corned beef cow. Brisket cupim beef ribs pork chop alcatra chislic tail sirloin bresaola tongue burgdoggen doner.',
+          ratings: [5, 5, 4]
         },
         {
           name: 'Creating Forms with Vue',
+          author: 'Melinda Golden',
           summary:
-            'Bacon ipsum dolor amet strip steak andouille buffalo, prosciutto ribeye frankfurter porchetta tail rump cow bacon. Shankle kevin boudin biltong.'
+            'Bacon ipsum dolor amet strip steak andouille buffalo, prosciutto ribeye frankfurter porchetta tail rump cow bacon. Shankle kevin boudin biltong.',
+          ratings: [5, 5]
         }
       ]
     };
