@@ -1,5 +1,5 @@
 <template>
-  <base-card>
+  <BaseCard>
     <div class="first-column">
       <div class="image-placeholder"></div>
     </div>
@@ -8,10 +8,11 @@
       <p class="course-author">{{ course.author }}</p>
       <p class="course-summary">{{ course.summary }}</p>
       <p class="course-rating">
-        {{ averageRating }} <span>({{ course.ratings.length }})</span>
+        {{ averageRating }}
+        <span> ({{ numberOfRatings }}) </span>
       </p>
     </div>
-  </base-card>
+  </BaseCard>
 </template>
 
 <script>
@@ -28,11 +29,19 @@ export default {
     }
   },
   computed: {
-    averageRating: function() {
+    averageRating() {
       const sum = this.course.ratings.reduce((sum, rating) => {
         return (sum += rating);
       }, 0);
       return (sum / this.course.ratings.length).toFixed(1);
+    },
+
+    numberOfRatings() {
+      if (this.course.ratings.length === 1) {
+        return '1 rating';
+      }
+
+      return `${this.course.ratings.length} ratings`;
     }
   }
 };

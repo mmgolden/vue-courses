@@ -12,20 +12,20 @@
           <router-link :to="navItem.to">{{ navItem.name }}</router-link>
         </li>
         <li>
-          <base-button outline @click="openLoginModal">
+          <BaseButton outline @click="openLoginModal">
             Log in
-          </base-button>
+          </BaseButton>
         </li>
         <li>
-          <base-button primary @click="openSignupModal">
+          <BaseButton primary @click="openSignupModal">
             Sign up
-          </base-button>
+          </BaseButton>
         </li>
       </ul>
 
       <!-- Modals -->
-      <login-modal ref="loginModal" :onSignup="openSignupModal"></login-modal>
-      <signup-modal ref="signupModal" :onLogin="openLoginModal"></signup-modal>
+      <LoginModal ref="loginModal" :onSignup="openSignupModal"></LoginModal>
+      <SignupModal ref="signupModal" :onLogin="openLoginModal"></SignupModal>
     </nav>
   </header>
 </template>

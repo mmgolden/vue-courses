@@ -1,11 +1,11 @@
 <template>
-  <base-modal ref="baseModal">
+  <BaseModal ref="baseModal">
     <template #header>
       Sign up for an account
     </template>
 
     <template #body>
-      <signup-form></signup-form>
+      <SignupForm />
     </template>
 
     <template #footer>
@@ -14,7 +14,7 @@
         <span @click="onLogin" class="modal-link">Log in</span>
       </p>
     </template>
-  </base-modal>
+  </BaseModal>
 </template>
 
 <script>

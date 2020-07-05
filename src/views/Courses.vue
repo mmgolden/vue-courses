@@ -1,13 +1,13 @@
 <template>
   <div>
     <h2 class="page-title">Courses</h2>
-    <course-tabs></course-tabs>
+    <CourseTabs />
     <div>
-      <course-card
+      <CourseCard
         v-for="course in courses"
         :key="course.name"
         :course="course"
-      ></course-card>
+      />
     </div>
   </div>
 </template>
