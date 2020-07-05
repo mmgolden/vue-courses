@@ -4,8 +4,15 @@
       <div class="image-placeholder"></div>
     </div>
     <div>
-      <h3 class="course-name">{{ course.name }}</h3>
-      <p class="course-author">{{ course.author }}</p>
+      <div class="course-header">
+        <div>
+          <h3 class="course-name">{{ course.name }}</h3>
+          <p class="course-author">{{ course.author }}</p>
+        </div>
+        <BaseButton class="course-favorite-button">
+          <HeartIcon />
+        </BaseButton>
+      </div>
       <p class="course-summary">{{ course.summary }}</p>
       <p class="course-rating">
         {{ averageRating }}
@@ -17,10 +24,12 @@
 
 <script>
 import BaseCard from '@/components/base/BaseCard.vue';
+import { HeartIcon } from 'vue-feather-icons';
 
 export default {
   components: {
-    BaseCard
+    BaseCard,
+    HeartIcon
   },
   props: {
     course: {
@@ -78,6 +87,12 @@ export default {
   border-radius: 8px;
 }
 
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .course-name {
   @include h3;
   margin-bottom: 0.5rem;
@@ -87,6 +102,17 @@ export default {
   @include p;
   margin-bottom: 1rem;
   color: $color-font-subtle;
+}
+
+.course-favorite-button {
+  svg {
+    stroke: $color-font-primary;
+    transition: all 0.3s;
+
+    &:hover {
+      stroke: $color-primary;
+    }
+  }
 }
 
 .course-summary {
