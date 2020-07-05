@@ -8,9 +8,9 @@
         <h2 class="modal-title">
           <slot name="header"></slot>
         </h2>
-        <base-button @click="close">
-          <x-icon class="modal-close-icon"></x-icon>
-        </base-button>
+        <BaseButton @click="close">
+          <XIcon class="modal-close-icon"></XIcon>
+        </BaseButton>
       </div>
 
       <!-- Body -->

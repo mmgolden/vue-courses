@@ -2,13 +2,21 @@
 
 @mixin h1 {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
   font-weight: 600;
   color: $color-font-primary;
 }
 
 @mixin h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $color-font-primary;
+  font-weight: 600;
+}
+
+@mixin h3 {
   margin: 0;
   font-size: 1.125rem;
   line-height: 1.5rem;
@@ -19,7 +27,7 @@
 @mixin p {
   margin: 0;
   font-size: 1rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   color: $color-font-primary;
 }
 

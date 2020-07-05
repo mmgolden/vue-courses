@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navigation></navigation>
+    <Navigation />
     <main class="main-container">
       <div class="page-container">
         <router-view />
@@ -24,7 +24,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1.875rem;
+  padding: 1.875rem;
 }
 
 .page-container {

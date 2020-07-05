@@ -1,30 +1,30 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
     <form class="signup-form" @submit.prevent="handleSubmit(onSubmit)">
-      <text-field
+      <TextField
         label="Email"
         type="email"
         name="email"
         autocomplete="email"
         rules="required|email"
         v-model="email"
-      ></text-field>
-      <text-field
+      ></TextField>
+      <TextField
         label="Password"
         type="password"
         name="password"
         autocomplete="new-password"
         rules="required|password:@Confirm password"
         v-model="password"
-      ></text-field>
-      <text-field
+      ></TextField>
+      <TextField
         label="Confirm password"
         type="password"
         name="confirmPassword"
         rules="required"
         v-model="confirmPassword"
-      ></text-field>
-      <base-button type="submit" primary>Sign up</base-button>
+      ></TextField>
+      <BaseButton type="submit" primary>Sign up</BaseButton>
     </form>
   </ValidationObserver>
 </template>
