@@ -1,29 +1,43 @@
 <template>
   <div>
     <h2 class="page-title">Courses</h2>
-    <CourseTabs />
-    <div>
-      <CourseCard
-        v-for="course in courses"
-        :key="course.name"
-        :course="course"
-      />
-    </div>
+    <BaseTabs>
+      <BaseTab title="All courses">
+        <div>
+          <CourseCard
+            v-for="course in allCourses"
+            :key="course.name"
+            :course="course"
+          />
+        </div>
+      </BaseTab>
+      <BaseTab title="Favorites">
+        <div>
+          <CourseCard
+            v-for="course in favoriteCourses"
+            :key="course.name"
+            :course="course"
+          />
+        </div>
+      </BaseTab>
+    </BaseTabs>
   </div>
 </template>
 
 <script>
 import CourseCard from '@/components/CourseCard.vue';
-import CourseTabs from '@/components/CourseTabs.vue';
+import BaseTabs from '@/components/base/BaseTabs.vue';
+import BaseTab from '@/components/base/BaseTab.vue';
 
 export default {
   components: {
     CourseCard,
-    CourseTabs
+    BaseTabs,
+    BaseTab
   },
   data() {
     return {
-      courses: [
+      allCourses: [
         {
           name: 'Introduction to Vue',
           author: 'Melinda Golden',
@@ -37,6 +51,22 @@ export default {
           summary:
             'Bacon ipsum dolor amet strip steak andouille buffalo, prosciutto ribeye frankfurter porchetta tail rump cow bacon. Shankle kevin boudin biltong.',
           ratings: [5, 5]
+        },
+        {
+          name: 'Vue Router',
+          author: 'Melinda Golden',
+          summary:
+            'Bacon ipsum dolor amet strip steak andouille buffalo, prosciutto ribeye frankfurter porchetta tail rump cow bacon. Shankle kevin boudin biltong.',
+          ratings: [4]
+        }
+      ],
+      favoriteCourses: [
+        {
+          name: 'Vue Router',
+          author: 'Melinda Golden',
+          summary:
+            'Bacon ipsum dolor amet strip steak andouille buffalo, prosciutto ribeye frankfurter porchetta tail rump cow bacon. Shankle kevin boudin biltong.',
+          ratings: [4]
         }
       ]
     };
