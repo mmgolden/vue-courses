@@ -8,7 +8,7 @@ import './assets/scss/main.scss';
 
 /* Register BaseButton globally */
 import BaseButton from './components/base/BaseButton.vue';
-Vue.component('base-button', BaseButton);
+Vue.component('BaseButton', BaseButton);
 
 /* Register the validation provider */
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
