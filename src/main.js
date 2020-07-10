@@ -6,6 +6,9 @@ import store from './store';
 /* Import main.scss */
 import './assets/scss/main.scss';
 
+/* Import Firebase */
+import '@/plugins/firebase';
+
 /* Register BaseButton globally */
 import BaseButton from './components/base/BaseButton.vue';
 Vue.component('BaseButton', BaseButton);
