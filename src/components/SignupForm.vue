@@ -32,6 +32,7 @@
 <script>
 import TextField from '@/components/form/TextField.vue';
 import { extend } from 'vee-validate';
+import axios from 'axios';
 
 extend('password', {
   params: ['target'],
@@ -54,7 +55,17 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.email, this.password, this.confirmPassword);
+      axios
+        .post(
+          `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.VUE_APP_API_KEY}`,
+          {
+            email: this.email,
+            password: this.password,
+            returnSecureToken: true
+          }
+        )
+        .then(response => console.log('success', response))
+        .catch(error => console.log('failed', error));
     }
   }
 };
